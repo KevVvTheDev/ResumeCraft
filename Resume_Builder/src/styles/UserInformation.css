@@ -1,0 +1,6 @@
+.userInformation{
+    flex:3;
+    height: 100vh;
+    border: 1px solid black;
+    background-color: #b8c1ec;
+}
