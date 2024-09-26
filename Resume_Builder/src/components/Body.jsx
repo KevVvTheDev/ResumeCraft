@@ -59,7 +59,7 @@ export default function Body() {
 
     return(
         <div>
-             {/* <Form 
+             <Form 
              //pass the form  and multiple function to the form
                 formData={formData}
                 handlePersonalChange={handlePersonalChange}
@@ -68,7 +68,7 @@ export default function Body() {
                 handleExperienceChange={handleExperienceChange}
             />
 
-            <Resume formData={formData} /> */}
+            <Resume formData={formData} />
 
         </div>
     );
