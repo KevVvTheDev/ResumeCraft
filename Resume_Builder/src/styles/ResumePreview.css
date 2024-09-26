@@ -1,9 +1,40 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.generatedPadding{
+    padding: 10px;
+}
+
 .ResumePreview{
-    display: flex;
     flex:7;
     height: 100vh;
     border: 1px solid black;
     justify-content: center;
     background-color: #232946;
     color: #fffffe;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+.previewForm{
+    position:absolute;
+    margin: 10px 4%;
+    width: 60vw;
+    height: 80vh;
+    background-color: #fffffe;
+}
+
+.personalInfo{
+    text-align: center;
+    color: black;
+}
+
+.personalInfo h2{
+    font-size: 2rem;
+}
+
+.paragraphStyle{
+    font-size: 13px;
 }

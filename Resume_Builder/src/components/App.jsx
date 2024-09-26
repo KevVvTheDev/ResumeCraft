@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import '../styles/App.css'
-import  UserInformation from './UserInformation.jsx' //import the part that get data from user
-import ResumePreview from'./ResumePreview.jsx' // preview the resume
+// import Header from './Header.jsx';
+// import Body from './Body.jsx';
 
 function App() {
 
-  return (
+  return (  
     <div className="App">
-        <UserInformation />
-        <ResumePreview />
+      {/* <Header /> */}
+      {/* <Body /> */}
     </div>
   )
-}
+} 
 
 export default App
