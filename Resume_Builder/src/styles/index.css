@@ -1,4 +1,70 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    border: none;
+    margin: 0;
+    font-family: "Poppins",Inter, Helvetica, Arial, sans-serif;
+}
+
+menu:not(article menu),
+ol:not(article ol),
+ul:not(article ul) {
+    list-style: none;
+}
+
+menu,
+ol,
+ul {
+    padding-left: 0;
+}
+
+article ol,
+article ul {
+    list-style-position: inside;
+}
+
+html {
+    font-size: 62.5%;
+    /* (62.5/100) * 16px = 10px */
+}
+
+html {
+    -webkit-text-size-adjust: none;
+    /* for iOS Safari */
+    text-size-adjust: none;
+    /* for other mobile browsers */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+label,
+button,
+select,
+summary,
+[type=radio],
+[type=submit],
+[type=checkbox] {
+    cursor: pointer;
+}
+
+:root {
+    --bg-yellow: rgb(212, 178, 66, 1);
+    --bg-ash: rgb(172, 167, 175, 1);
+    --violet-dark: rgba(46, 7, 63, 1);
+    --violet-mid: rgb(101, 81, 110);
+    --green-dark: rgba(13, 124, 102, 1);
+    --green-light: rgba(65, 179, 162, 1);
+    --yellow: rgba(250, 159, 2, 1);
+}
+
 body{
-  padding: 0%;
-  margin: 0%;
+    background-color: var(--violet-mid);
 }

@@ -19,6 +19,7 @@ function AskingName(props) {
   const handleChange = (event) => {
     const { name, value } = event.target;
     const newInfo = { ...props.userInfo, [name]: value };
+    //props.setUserInfo({...props.userInfo, [name]: value});
     props.setUserInfo(newInfo);
   };
   

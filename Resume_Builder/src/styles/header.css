@@ -1,0 +1,23 @@
+header{
+    font-size: 2rem;
+    padding: .5rem;
+}
+
+h1{
+    text-align: center;
+    font-weight: 500;
+}
+
+.details-span{
+    color: red;
+    background-color: var(--violet-dark);
+    padding: 0rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.resume-span{
+    color: green;
+    background-color: #eeecec;
+    padding: 0rem 1rem;
+    border-radius: 0.5rem;
+}

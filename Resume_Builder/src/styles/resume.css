@@ -1,0 +1,200 @@
+.resume-div{
+    width: 70%;
+    height: 70%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-sheet{
+    width: 90%;
+    height: fit-content;
+    background-color: #eeecec;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+p{
+    font-size: 1.4rem;
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+
+hr{
+    color: black;
+    border: 1px solid rgb(68, 65, 65);
+    width: 90%;
+    margin: 2rem 0;
+}
+
+.body-left hr{
+    width: 100%;
+}
+
+.header-section{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-section > h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.header-content{
+    display: flex;
+    gap: 1rem;
+}
+
+.summary{
+    width: 90%;
+    text-align: justify;
+}
+
+.body-section{
+    display: flex;
+    width: 90%;
+}
+
+.body-section  p, ul, li{
+    font-size: 1.3rem;
+}
+
+.body-left{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    background-color: rgb(214, 216, 215);
+    padding: 1rem;
+}
+
+.body-left hr{
+    margin: 1rem 0;
+}
+
+.skills-div{
+    text-align: justify;
+}
+
+.education-div h3{
+    font-size: 1.3rem;
+}
+
+.clg-details, .scl-details{
+    line-height: 2rem;
+}
+
+.clg-div{
+    margin-bottom: 2rem;
+}
+
+.passOut{
+    font-size: 1.2rem !important;
+}
+
+.gpa{
+    font-weight: 600;
+    font-size: 1.4rem !important;
+}
+
+.body-right{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+
+.company{
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: inline;
+}
+
+.bar{
+    display: inline;
+    margin: 0 0.5rem;
+}
+
+.job{
+    display: inline;
+    color: rgb(7, 3, 255);
+    font-weight: 500;
+}
+
+.duration{
+    font-size: 1.2rem;
+    margin-bottom: -0.5rem;
+}
+
+.location{
+    color: rgb(255, 1, 1);
+    margin-bottom: 1rem;
+}
+
+.ach-div > h4{
+    font-weight: 550;
+    margin-bottom: 0.5em;
+}
+
+.ach-div > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: justify;
+}
+
+.ach-div{
+    margin-bottom: 2rem;
+}
+
+.download-cv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.download-cv p{
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.download-btn{
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+}
+
+.footer-section{
+    align-self: flex-start;
+    padding: 0 5%;
+    transform: translateY(-1.6rem);
+    text-align: justify;
+}
+
+.footer-section p{
+    display: inline;
+    font-size: 1.4rem;
+}
+
+.footer-section a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: blue;
+}
+
+.footer-section a:hover{
+    text-decoration: underline;
+}

@@ -1,0 +1,34 @@
+label{
+    font-size: 2rem;
+    display: block;
+    margin: 0.3rem;
+    color: #fff;
+}
+
+input{
+    width: 90%;
+    height: 3rem;
+    display: block;
+    margin: 0.3rem;
+    border: 1px solid var(--violet-dark);
+    border-radius: 0.4rem;
+}
+
+textarea{
+    width: 80%;
+    height: 8rem;
+    margin: 0.3rem;
+    border: 1px solid var(--violet-dark);
+    border-radius: 0.4rem;
+}
+
+input:focus,textarea:focus{
+    background-color: var(--bg-yellow);
+}
+
+form > * > h1{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin: 1.3rem 1rem;
+    color: var(--yellow);
+}

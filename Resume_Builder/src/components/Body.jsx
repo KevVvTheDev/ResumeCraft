@@ -15,15 +15,16 @@ export default function Body() {
             summary: 'Specialize in fullstack web development and love to learn more skills and honed my skills in React js.',
             skills: ['Java', 'JavaScript', 'C++', 'React', 'HTML', 'CSS'],
         },
+        //-------------------------------------
         education: {
             college: 'Penn State Behrend',
             degree: 'Bachelor of Computer Science',
-            major: 'Computer Science',
             gpa: '3.6',
-            
+            graduation: 'December 2025',          
         },
+        //-------------------------------------
         languages: ['English','Vietnamese'], //Array because allow users to add more.
-
+        //-------------------------------------
         experiences: [ //let user add more experience
             {
                 company: 'RealCompany',
@@ -34,7 +35,6 @@ export default function Body() {
             }
         ],
         
-
     });
 
     const handlePersonalChange = (updatedInfo) => {
@@ -67,7 +67,7 @@ export default function Body() {
                 handleLanguageChange={handleLanguageChange}
                 handleExperienceChange={handleExperienceChange}
             />
-                
+
             <Resume formData={formData} /> */}
 
         </div>
