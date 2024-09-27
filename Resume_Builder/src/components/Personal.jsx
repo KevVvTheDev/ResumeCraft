@@ -15,35 +15,40 @@ export default function Personal({ personal, handlePersonalChange }) {
         handlePersonalChange({...personal,skills: newSkill});
     }
 
-    const handleAddSkill = () => {
-        // e.preventDefault();
-        setSkills([...skill, '']);
-        handlePersonalChange({ ...personalData, skills: [...skill, ''] });
+    const handleAddSkill = (event) => {
+        event.preventDefault();
+        const newSkill = [...skill]; // get a shallow copy of the skill array
+        newSkill.push(''); // push new item to the array
+        setSkill(newSkill); //set the new array to current state
+       
+        handlePersonalChange({ ...personal, skills: newSkill });
       };
+
+    
     
       return (
         <div className='personal-div'>
           <h1>Personal</h1>
           <div className='details-list'>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Name:</label>
             <input type="text" id='name' name = "name" value={personal.name} onChange={handleInputChange} />
     
-            <label htmlFor="address">Address</label>
+            <label htmlFor="address">Address:</label>
             <input type="text" id='address' name = "address" value={personal.address} onChange={handleInputChange} />
     
-            <label htmlFor="phone">Phone</label>
+            <label htmlFor="phone">Phone:</label>
             <input type="tel" id='phone' name = "phone" value={personal.phone} onChange={handleInputChange} />
     
-            <label htmlFor="mail">Mail</label>
-            <input type="email" id='mail' name = "mail" value={personal.mail} onChange={handleInputChange} />
+            <label htmlFor="email">Email:</label>
+            <input type="text" id='email' name = "email" value={personal.email} onChange={handleInputChange} />
     
-            <label htmlFor="summary">Summary</label>
+            <label htmlFor="summary">Summary:</label>
             <textarea id='summary' name = "summary" value={personal.summary} onChange={handleInputChange} />
     
             <div className="skills-div">
               <label>Skills</label>
               <div className="skill-inputs">
-                {skills.map((skill, index) => (
+                {skill.map((skill, index) => (
                   <input
                     key={index}
                     type="text"
@@ -52,7 +57,7 @@ export default function Personal({ personal, handlePersonalChange }) {
                   />
                 ))}
               </div>
-              <button onClick={handleAddSkill} className="add-skill-btn">+ New Skill</button>
+              <button onClick={(e) => handleAddSkill(e)} className="add-skill-btn">+ New Skill</button>
             </div>
           </div>
         </div>

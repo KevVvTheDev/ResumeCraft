@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function Languages({ languages, handleLanguagesChange }) {
+export default function Languages({ languages, handleLanguageChange }) {
     const [language, setLanguage] = useState(languages);
     // const [exist, setExist] = useState(false);
-    const handleLanguageChange = (index, updatedInfo) => {
+    const handleLanguagesChange = (index, updatedInfo) => {
         const newLanguage = [...language];
         newLanguage[index] = updatedInfo;
         setLanguage(newLanguage);
-        handleLanguagesChange(newLanguage);
+        handleLanguageChange(newLanguage);
     }
     
     const handleAddLanguage = () => {
@@ -25,7 +25,7 @@ export default function Languages({ languages, handleLanguagesChange }) {
             key={index}
             type="text"
             value={language}
-            onChange={(event) => handleLanguageChange(index, event.target.value)}
+            onChange={(event) => handleLanguagesChange(index, event.target.value)}
           />
         ))}
       </div>
@@ -38,6 +38,6 @@ export default function Languages({ languages, handleLanguagesChange }) {
 
 //to validate
 Languages.propTypes = {
-    Languages: PropTypes.array.isRequired,
-    handleLanguagesChange: PropTypes.func.isRequired
+    languages: PropTypes.array.isRequired,
+    handleLanguageChange: PropTypes.func.isRequired
 };

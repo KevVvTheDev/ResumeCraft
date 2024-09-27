@@ -5,32 +5,58 @@ import '../styles/resume.css';
 
 export default function Resume({formData}){
     //use object destructuring to extract information from formData object
-    const { personal, education, languages, experience} = formData;
-
-  const handleDownload = () => {
+    const { personal, education, languages, experiences} = formData;
+    //handleDownload function to download the resume in pdf format
+const handleDownload = () => {
     const resume = document.querySelector('.resume-sheet');
-
-    const resumeWidth = resume.offsetWidth;
-    const resumeHeight = resume.offsetHeight;
-
+  
+    // Create a canvas of the resume
     html2canvas(resume, {
-      scale: 2,
-      useCORS: true, 
-      width: resumeWidth, 
-      height: resumeHeight,
+      scale: 2, // Maintain a higher scale for better quality
+      useCORS: true,
+      width: resume.offsetWidth,
+      height: resume.offsetHeight,
     }).then((canvas) => {
       const imgData = canvas.toDataURL('image/png');
-
+  
+      // Create a PDF document
       const pdf = new jsPDF({
         orientation: 'portrait',
-        unit: 'px',
-        format: [canvas.width, canvas.height], 
+        unit: 'mm', //  better measurement
+        format: 'a4', // Use A4 paper size
       });
-
-      pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+  
+      // A4 dimensions in mm
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      
+      // Calculate image dimensions maintaining aspect ratio
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      
+      // Calculate the aspect ratio
+      const aspectRatio = imgWidth / imgHeight;
+  
+      // Calculate new dimensions
+      let newWidth, newHeight;
+      if (imgWidth > imgHeight) {
+        // Landscape image
+        newWidth = pdfWidth; // Fit PDF width
+        newHeight = pdfWidth / aspectRatio; // Maintain aspect ratio
+      } else {
+        // Portrait image
+        newHeight = pdfHeight; // Fit PDF height
+        newWidth = pdfHeight * aspectRatio; // Maintain aspect ratio
+      }
+  
+      // Add the image to the PDF
+      pdf.addImage(imgData, 'PNG', 0, 0, newWidth, newHeight);
+      
+      // Save the PDF
       pdf.save('resume.pdf');
     });
   };
+  
 
   return(
 
@@ -61,7 +87,7 @@ export default function Resume({formData}){
             <h2>Skills</h2>
             <ul>
               {personal.skills.map((skill, index) => (
-                <li key={index}>{'•' + ' ' + skill}</li>
+                <li key={index}>{'•' + skill}</li>
               ))}
             </ul>
           </div>
@@ -71,10 +97,11 @@ export default function Resume({formData}){
           <div className="education-div">
             <h2>Education</h2>
             <div className='clg-div'>
-              <h3>{education.college}</h3>
+              <p> <strong>College/University:</strong>{education.college}</p>
               <div className="clg-details">
-                <p>{education.degree}</p>
-                <p className='gpa'>{education.gpa}</p>
+                <p> <strong>Degree: </strong>{education.degree}</p>
+                <p className='gpa'> GPA: {education.gpa}</p>
+                <p> <strong>Graduation: </strong>{education.graduation}</p>
               </div>
             </div>
           </div>
@@ -95,7 +122,7 @@ export default function Resume({formData}){
           <div className="experience-div">
             <h2>Experience</h2>
             <ul>
-              {experience.map((exp, index) => (
+              {experiences.map((exp, index) => (
                 <li key={index}>
                   <h3 className='company'>{exp.company}</h3>
                   <p className='bar'>|</p>

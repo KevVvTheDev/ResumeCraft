@@ -18,11 +18,11 @@ export default function Form({formData,handlePersonalChange,handleEducationChang
 
 }
 
-//to validate the type of the props
-Form.propTypes = {
+//to validate the type of the props * easier to debug
+Form.PropTypes = {
     formData: PropTypes.object.isRequired,
     handlePersonalChange: PropTypes.func.isRequired,
     handleEducationChange: PropTypes.func.isRequired,
-    handleLanguagesChange: PropTypes.func.isRequired,
+    handleLanguageChange: PropTypes.func.isRequired,
     handleExperienceChange: PropTypes.func.isRequired,
   };

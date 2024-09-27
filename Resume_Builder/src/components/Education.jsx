@@ -36,6 +36,7 @@ export default function Education({education, handleEducationChange}) {
         <input 
           type="text" 
           id="gpa" 
+          name = "gpa"
           value={education.gpa} 
           onChange={handleInput}  
         />

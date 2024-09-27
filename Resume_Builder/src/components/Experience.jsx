@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 
-export default function Experience({ experience, handleExperienceChange }) {
+export default function Experience({ experiences, handleExperienceChange }) {
     const handleInputChange = (index,field,value) => {
-        const newExperiences = [...experience]; //create a shallow copy of the experience array
+        const newExperiences = [...experiences]; //create a shallow copy of the experience array
         newExperiences[index][field] = value; //update the value of the field
         handleExperienceChange(newExperiences); //update the state
     };
     const handleAddAchievement = (e, index) => {
         e.preventDefault();
-        const newExperiences = [...experienceData];
+        const newExperiences = [...experiences];
         newExperiences[index].achievements.push('');
         handleExperienceChange(newExperiences);
       };
@@ -16,7 +16,7 @@ export default function Experience({ experience, handleExperienceChange }) {
       const handleAddExperience = (e) => {
         e.preventDefault();
         handleExperienceChange([
-          ...experienceData,
+          ...experiences,
           { company: '', job: '', duration: '', location: '', achievements: [''] },
         ]);
       };
@@ -24,13 +24,14 @@ export default function Experience({ experience, handleExperienceChange }) {
       return (
         <div className="experience-div">
           <h1>Experience</h1>
-          {experienceData.map((experience, index) => (
+          {/* pay attention to line 27 because may brake */}
+          {experiences.map((experiences, index) => (
             <div key={index} className="experience-section">
               <label htmlFor={`company-${index}`}>Company</label>
               <input
                 type="text"
                 id={`company-${index}`}
-                value={experience.company}
+                value={experiences.company}
                 onChange={(e) => handleInputChange(index, 'company', e.target.value)}
               />
     
@@ -38,7 +39,7 @@ export default function Experience({ experience, handleExperienceChange }) {
               <input
                 type="text"
                 id={`job-${index}`}
-                value={experience.job}
+                value={experiences.job}
                 onChange={(e) => handleInputChange(index, 'job', e.target.value)}
               />
     
@@ -46,7 +47,7 @@ export default function Experience({ experience, handleExperienceChange }) {
               <input
                 type="text"
                 id={`duration-${index}`}
-                value={experience.duration}
+                value={experiences.duration}
                 onChange={(e) => handleInputChange(index, 'duration', e.target.value)}
               />
     
@@ -54,13 +55,14 @@ export default function Experience({ experience, handleExperienceChange }) {
               <input
                 type="text"
                 id={`location-${index}`}
-                value={experience.location}
+                value={experiences.location}
                 onChange={(e) => handleInputChange(index, 'location', e.target.value)}
               />
     
               <div className="achievements-section">
                 <label>Achievements</label>
-                {experience.achievements.map((achievement, achIndex) => (
+                 {/* pay attention to line 65 because may brake */}
+                {experiences.achievements?.map((achievement, achIndex) => (
                   <input
                     key={achIndex}
                     type="text"
