@@ -10,7 +10,7 @@ export default function Body() {
         personal: {
             name: 'Kevin Tran',
             email: 'realEmail@gmail.com',
-            phone: '+1 123 456 7891',
+            phone: '+1 123-456-7891',
             address: 'Erie,PA',
             summary: 'Specialize in fullstack web development and love to learn more skills and honed my skills in React js.',
             skills: ['Java', 'JavaScript', 'C++', 'React', 'HTML', 'CSS'],
@@ -23,7 +23,7 @@ export default function Body() {
             graduation: 'December 2025',          
         },
         //-------------------------------------
-        languages: ['English','Vietnamese'], //Array because allow users to add more.
+        languages: ['English','Vietnamese','French','German','Chinese','Japanese'], //Array because allow users to add more.
         //-------------------------------------
         experiences: [ //let user add more experience
             {
@@ -52,24 +52,24 @@ export default function Body() {
     });
 
     const handlePersonalChange = (updatedInfo) => {
-    //     setFormData({ ...formData, personal: updatedInfo });
-        // const newData = {...formData, personal: updatedInfo};
-        // setFormData(newData);
-    // 
+
         // setFormData((prevData) => ({ ...prevData, personal: updatedInfo })); this works too
         setFormData({ ...formData, personal: updatedInfo });
     }
 
     const handleEducationChange = (updatedInfo) => {
-        setFormData((prevData) => ({...prevData, education: updatedInfo}));
+        // setFormData((prevData) => ({...prevData, education: updatedInfo}));
+        setFormData({ ...formData, education: updatedInfo });
     }
 
     const handleLanguageChange = (updatedInfo) => {
-        setFormData((prevData) => ({...prevData, languages: updatedInfo}));
+        // setFormData((prevData) => ({...prevData, languages: updatedInfo}));
+        setFormData({ ...formData, languages: updatedInfo });
     }
 
     const handleExperienceChange = (updatedInfo) => {
-        setFormData((prevData) => ({...prevData, experiences: updatedInfo}));
+        // setFormData((prevData) => ({...prevData, experiences: updatedInfo}));
+        setFormData({ ...formData, experiences: updatedInfo });
     }
 
     return(

@@ -146,7 +146,7 @@ const handleDownload = () => {
 
       {/* <hr /> */}
 
-    </div>
+    </div>  
 
     <div className="download-cv">
       <button className='download-btn' onClick={handleDownload}>Download CV</button>

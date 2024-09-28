@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 export default function Languages({ languages, handleLanguageChange }) {
     const [language, setLanguage] = useState(languages);
-    // const [exist, setExist] = useState(false);
     const handleLanguagesChange = (index, updatedInfo) => {
         const newLanguage = [...language];
         newLanguage[index] = updatedInfo;
@@ -11,9 +10,12 @@ export default function Languages({ languages, handleLanguageChange }) {
         handleLanguageChange(newLanguage);
     }
     
-    const handleAddLanguage = () => {
-        setLanguage([...language, '']);
-        handleLanguageChange([...language, '']);
+    const handleAddLanguage = (e) => {
+      e.preventDefault();
+        const newLanguage = [...language];
+        newLanguage.push('');
+        setLanguage(newLanguage);
+        handleLanguageChange({...languages, languages:newLanguage});
     }
     
     return (
@@ -30,7 +32,7 @@ export default function Languages({ languages, handleLanguageChange }) {
         ))}
       </div>
 
-      <button onClick={handleAddLanguage} className="add-language-btn">+ New Language</button>
+      <button onClick={(e)=>handleAddLanguage(e)} className="add-language-btn">+ New Language</button>
     </div>
         
     );

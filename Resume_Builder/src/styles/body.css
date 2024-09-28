@@ -26,7 +26,7 @@
     margin: 1rem;
     border-radius: 0.5rem;
     overflow-y: auto;
-    background-color: var(--violet-dark);
+    background-color: var(--light-purple);  
   }
   
   Form::-webkit-scrollbar {

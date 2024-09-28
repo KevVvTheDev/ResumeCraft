@@ -58,7 +58,7 @@ hr{
 
 .summary{
     width: 90%;
-    text-align: justify;
+    text-align: center;
 }
 
 .body-section{
@@ -116,6 +116,7 @@ hr{
 }
 
 .company{
+    padding: 0.5rem;
     font-size: 1.6rem;
     font-weight: 500;
     display: inline;
@@ -127,17 +128,20 @@ hr{
 }
 
 .job{
+    padding: 0.5rem;
     display: inline;
     color: rgb(7, 3, 255);
     font-weight: 500;
 }
 
 .duration{
+    padding: 0.5rem;
     font-size: 1.2rem;
     margin-bottom: -0.5rem;
 }
 
 .location{
+    padding: 0.5rem;
     color: rgb(255, 1, 1);
     margin-bottom: 1rem;
 }
@@ -175,26 +179,4 @@ hr{
     text-align: center;
     font-size: 2rem;
     padding: 1rem 2rem;
-}
-
-.footer-section{
-    align-self: flex-start;
-    padding: 0 5%;
-    transform: translateY(-1.6rem);
-    text-align: justify;
-}
-
-.footer-section p{
-    display: inline;
-    font-size: 1.4rem;
-}
-
-.footer-section a{
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: blue;
-}
-
-.footer-section a:hover{
-    text-decoration: underline;
 }

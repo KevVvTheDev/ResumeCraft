@@ -21,7 +21,7 @@ export default function Personal({ personal, handlePersonalChange }) {
         newSkill.push(''); // push new item to the array
         setSkill(newSkill); //set the new array to current state
        
-        handlePersonalChange({ ...personal, skills: newSkill });
+        handlePersonalChange({ ...personal, skills: newSkill }); //update in real time
       };
 
     

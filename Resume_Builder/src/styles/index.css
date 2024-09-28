@@ -29,7 +29,6 @@ article ul {
 
 html {
     font-size: 62.5%;
-    /* (62.5/100) * 16px = 10px */
 }
 
 html {
@@ -63,8 +62,10 @@ summary,
     --green-dark: rgba(13, 124, 102, 1);
     --green-light: rgba(65, 179, 162, 1);
     --yellow: rgba(250, 159, 2, 1);
+    --light-purple:#b8c1ec;
+    --dark-purple: #232946;
 }
 
 body{
-    background-color: var(--violet-mid);
+    background-color: var(--dark-purple);
 }
